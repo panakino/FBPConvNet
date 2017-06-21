@@ -1,4 +1,4 @@
-# FBPConvNet
+# FBPConvNet - Matlab
 
 Readme
 
@@ -10,3 +10,4 @@ Readme
 4. Use main.m for training. After training, run evaluation.m for deploy of test data set.
 
 *note : phantom data set (x20) is only provided. SNR value may be slightly different with paper (http://ieeexplore.ieee.org/document/7949028/). 
+*note : these codes mainly ran on Matlab 2016a with GPU TITAN X (architecture : Maxwell)
