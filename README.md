@@ -12,8 +12,6 @@ Readme
 (2) dataset : https://drive.google.com/open?id=0B9fSVcoxJuVwMDlxbXdvcTRaM2M just place this data in the same folder with main.m
 4. Use main.m for training. After training, run evaluation.m for deploy of test data set.
 
-*note : phantom data set (x20) is only provided. SNR value may be slightly different with our paper. 
-
-*note : these codes mainly ran on Matlab 2016a with GPU TITAN X (architecture : Maxwell)
-
+*note : phantom data set (x20) is only provided. SNR value may be slightly different with our paper. <br />
+*note : these codes mainly ran on Matlab 2016a with GPU TITAN X (architecture : Maxwell)<br />
 contact : Kyong Jin (kyonghwan.jin@gmail.com), 
