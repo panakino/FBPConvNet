@@ -24,7 +24,7 @@ net=[];
 % net.meta.normalization.imageSize = [200, 200, 3*(3*opts.waveletLevel+1)] ;
 net.meta.normalization.imageSize = [opts.patchSize,opts.patchSize,ch_length] ;
  
-net = junhongDeno(net, opts) ;
+net = unet(net, opts) ;
 bs = 256 ;
  
  
@@ -222,7 +222,7 @@ net.layers{end+1} = struct('type', 'upconv', 'name', sprintf('upconv%s', id), ..
 
 
 % --------------------------------------------------------------------
-function net = junhongDeno(net, opts)
+function net = unet(net, opts)
 % --------------------------------------------------------------------
  
 net.layers = {} ;
