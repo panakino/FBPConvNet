@@ -1,4 +1,4 @@
-% evaluatio - FBPConvNet
+% evaluation - FBPConvNet
 % modified from MatconvNet (ver.23)
 % 22 June 2017
 % contact : Kyong Jin (kyonghwan.jin@gmail.com)
