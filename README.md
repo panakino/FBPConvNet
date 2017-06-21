@@ -12,3 +12,5 @@ Readme
 *note : phantom data set (x20) is only provided. SNR value may be slightly different with paper (http://ieeexplore.ieee.org/document/7949028/). 
 
 *note : these codes mainly ran on Matlab 2016a with GPU TITAN X (architecture : Maxwell)
+
+contact : Kyong Jin (kyonghwan.jin@gmail.com), 
