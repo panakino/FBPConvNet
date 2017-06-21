@@ -15,13 +15,7 @@ opts.channel_out=1;
 opts.channel_in=1;
 opts = vl_argparse(opts, varargin) ;
 ch_length=opts.channel_in;
-% if opts.waveLevel==1
-%     ch_length=1;
-% else
-%     ch_length = sum(2.^opts.waveLevel)+1;
-% end
 net=[];
-% net.meta.normalization.imageSize = [200, 200, 3*(3*opts.waveletLevel+1)] ;
 net.meta.normalization.imageSize = [opts.patchSize,opts.patchSize,ch_length] ;
  
 net = unet(net, opts) ;
@@ -226,7 +220,6 @@ function net = unet(net, opts)
 % --------------------------------------------------------------------
  
 net.layers = {} ;
-% ch_length = sum(2.^opts.waveLevel)+1;
 ch_length = opts.channel_in;
 ch_length_out = opts.channel_out;
 KerenlSize = 3;
@@ -260,28 +253,23 @@ net = add_pool(net, opts,'3',2,0);
 net = add_block(net, opts, '4_1', KerenlSize, KerenlSize, 512, 1024, 1, zeroPad,1,1) ;
 net = add_block(net, opts, '4_2', KerenlSize, KerenlSize, 1024, 1024, 1, zeroPad,1,1) ;
 net = add_block_convt(net, opts, '4_3', KerenlSize, KerenlSize, 1024, 512, 2, [0 1 0 1],1,1) ;
-% net = add_upconv(net, '4', 2, 0);
-
 
 net = add_reg_concat(net, '5_0',4);
 net = add_block(net, opts, '5_1', KerenlSize, KerenlSize, 1024, 512, 1, zeroPad,1,1) ;
 net = add_block(net, opts, '5_2', KerenlSize, KerenlSize, 512, 512, 1, zeroPad,1,1) ;
 net = add_block_convt(net, opts, '5_3', KerenlSize, KerenlSize, 512, 256, 2,  [0 1 0 1],1,1) ;
-% net = add_upconv(net, '5', 2, 0);
 
 
 net = add_reg_concat(net, '6_0',3);
 net = add_block(net, opts, '6_1', KerenlSize, KerenlSize, 512, 256, 1, zeroPad,1,1) ;
 net = add_block(net, opts, '6_2', KerenlSize, KerenlSize, 256, 256, 1, zeroPad,1,1) ;
 net = add_block_convt(net, opts, '6_3', KerenlSize, KerenlSize, 256, 128, 2,  [0 1 0 1],1,1) ;
-% net = add_upconv(net, '6', 2, 0);
 
 
 net = add_reg_concat(net, '7_0',2);
 net = add_block(net, opts, '7_1', KerenlSize, KerenlSize, 256, 128, 1, zeroPad,1,1) ;
 net = add_block(net, opts, '7_2', KerenlSize, KerenlSize, 128, 128, 1, zeroPad,1,1) ;
 net = add_block_convt(net, opts, '7_3', KerenlSize, KerenlSize, 128, 64, 2,  [0 1 0 1],1,1) ;
-% net = add_upconv(net, '7', 2, 0);
 
 net = add_reg_concat(net, '8_0',1);
 net = add_block(net, opts, '8_1', KerenlSize, KerenlSize, 128, 64, 1, zeroPad,1,1) ;
