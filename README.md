@@ -15,3 +15,5 @@ Readme
 *note : phantom data set (x20) is only provided. SNR value may be slightly different with our paper. <br />
 *note : these codes mainly ran on Matlab 2016a with GPU TITAN X (architecture : Maxwell)<br />
 contact : Kyong Jin (kyonghwan.jin@gmail.com), 
+
+special thanks to Junhong Min (Senior Researcher at Samsung Electronics) to provide initial form of codes.
