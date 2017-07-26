@@ -179,9 +179,6 @@ for epoch=start+1:opts.numEpochs
         elseif epoch==1
             save(modelPath(epoch), 'net', 'info','opts') ;
         end
-        if epoch>2
-            delete(modelPath(epoch-1));
-        end
         fprintf('%s: model saved in %.2g s\n', mfilename, toc) ;
     end
     
