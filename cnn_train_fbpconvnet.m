@@ -174,7 +174,7 @@ for epoch=start+1:opts.numEpochs
     if ~evaluateMode
         fprintf('%s: saving model for epoch %d\n', mfilename, epoch) ;
         tic ;
-        if mod(epoch,50)==1 || mod(epoch,200)==1
+        if mod(epoch,50)==1
             save(modelPath(epoch), 'net', 'info') ;
         elseif epoch==1
             save(modelPath(epoch), 'net', 'info','opts') ;
