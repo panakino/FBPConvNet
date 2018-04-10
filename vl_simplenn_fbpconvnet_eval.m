@@ -358,7 +358,8 @@ for i=1:n
             
         case 'bnorm'
             if testMode
-                res(i+1).x = vl_nnbnorm(res(i).x, l.weights{1}, l.weights{2}, 'moments', l.weights{3}) ;
+                %res(i+1).x = vl_nnbnorm(res(i).x, l.weights{1}, l.weights{2}, 'moments', l.weights{3}) ;
+                res(i+1).x = vl_nnbnorm(res(i).x, l.weights{1}, l.weights{2}) ;
             else
                 res(i+1).x = vl_nnbnorm(res(i).x, l.weights{1}, l.weights{2}) ;
             end
